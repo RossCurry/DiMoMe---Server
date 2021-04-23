@@ -1,4 +1,4 @@
-const { addUser } = require('../models/userModel')
+const { addUser, checkLogin } = require('../models/userModel')
 
 
 async function newUser(req, res) {
@@ -12,4 +12,14 @@ async function newUser(req, res) {
   }
 }
 
-module.exports = {newUser}
+async function userLogin(req, res) {
+  try {
+    const userLogin = req.body;
+    const userDetails = await checkLogin(userLogin);
+    res.send(userDetails).status(201);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+module.exports = {newUser, userLogin}

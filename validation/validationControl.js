@@ -15,7 +15,17 @@ const userValidate = (req, res, next) => {
   next();
 }
 
+const validateLogin = (req,res, next) => {
+  const user = req.body;
+  const { email, password} = user;
+  req.body = {
+    email: atob(email), 
+    password: atob(password)
+  }
+  next();
+}
+
 //TODO if things were going better we would be encrypting too Bcrypt
 
 
-module.exports = { userValidate }
+module.exports = { userValidate, validateLogin }

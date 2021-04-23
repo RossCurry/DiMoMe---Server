@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const {newUser} = require('./controllers/userController')
-const { userValidate } = require('./validation/validationControl')
+const { newUser, userLogin } = require('./controllers/userController')
+const { userValidate, validateLogin } = require('./validation/validationControl')
 //USERS
 // post new user - subscribe
 // get one user - login
@@ -8,9 +8,8 @@ const { userValidate } = require('./validation/validationControl')
 // delete one user - delete from DB
 //TODO run through validation before controller
 router.post('/user/subscribe', userValidate, newUser)
-router.get('/user/login', (req, res)=> {console.log('login')})
+router.post('/user/login', validateLogin, userLogin)
 // router.put('/user/:id', )
 // router.delete('/user/:id', )
-
 
 module.exports = router;

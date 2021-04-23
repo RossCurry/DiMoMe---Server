@@ -58,4 +58,16 @@ async function addUser(newUser) {
   }
 }
 
-module.exports = { addUser }
+async function checkLogin(loginDetails) {
+
+  try {
+    const {email, password} = loginDetails;
+    const {_id, name, localType, localName} = await Users.findOne({email, password});
+    const userFromDB = {_id, email, name, localType, localName};
+    return userFromDB;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+module.exports = { addUser, checkLogin }
