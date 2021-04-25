@@ -19,7 +19,7 @@ router.post('/user/login', validateLogin, userLogin);
 // MENU ITEMS
 // CATEGORIES
 // add new category
-router.post('/categories', addNewCategory);
+router.post('/category', addNewCategory);
 
 
 
