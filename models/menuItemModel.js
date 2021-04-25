@@ -8,16 +8,20 @@ const MenuItems = mongoose.model('menuitemcol', menuItemSchema);
 const sendMenuItemToDB = async (newItem) => {
 
   try {
-    console.log('newItem before DB ', newItem);
     const newItemFromDB = await MenuItems.create(newItem);
-    console.log('return item from DB', newItemFromDB );
     return newItemFromDB;
   } catch (error) {
     console.log('Model: NEW menu item NOT saved to the DB');
     console.error(error);
   }
 
-
 };
 
-module.exports = { sendMenuItemToDB }
+const editItemDB = async (id, menuItem) => {
+  const matchedItem = await MenuItems.findByIdAndUpdate(id, menuItem);
+  const returnItem = await MenuItems.findById(id);
+  console.log('returnItem', returnItem);
+
+}
+
+module.exports = { sendMenuItemToDB, editItemDB }
