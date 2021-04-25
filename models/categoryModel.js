@@ -18,4 +18,15 @@ const addCategoryToDB = async (newCategory) => {
 
 }
 
-module.exports = { addCategoryToDB }
+const fetchAllCategoriesDB = async (userId) => {
+
+  try {
+    const allUserCategories = await Categories.find({userId});
+    return allUserCategories;
+  } catch (error) {
+    console.log('Model: All Categoies NOT returned from the DB');
+    console.error(error);
+  }
+};
+
+module.exports = { addCategoryToDB, fetchAllCategoriesDB }

@@ -15,9 +15,16 @@ const addNewMenuItem = async (req, res) => {
 
 const editMenuItem = async (req, res) => {
 
-  const id = req.params.id;
-  const itemToEdit = req.body;
-  const editedItem = await editItemDB(id, itemToEdit);
+  try {
+    const id = req.params.id;
+    const itemToEdit = req.body;
+    const editedItem = await editItemDB(id, itemToEdit);
+    res.send(editedItem).status(201);
+  } catch (error) {
+    res.status(400);
+    res.send({ error, message: 'Controller: could not EDIT Menu Item' });
+    console.error(error); // eslint-disable-line
+  }
 };
 
 

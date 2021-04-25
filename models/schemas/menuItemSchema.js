@@ -25,6 +25,10 @@ const menuItemSchema = new Schema({
   },
   dietaryContent: {
     type: [String]
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    require: true
   }
 
 });

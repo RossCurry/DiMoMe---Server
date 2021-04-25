@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { newUser, userLogin } = require('./controllers/userController')
-const { addNewCategory } = require('./controllers/categoryController')
+const { addNewCategory, getAllCategories } = require('./controllers/categoryController')
 const { addNewMenuItem, editMenuItem } = require('./controllers/menuItemController')
 const { userValidate, validateLogin } = require('./validation/validationControl')
 
@@ -21,6 +21,7 @@ router.post('/user/login', validateLogin, userLogin);
 // CATEGORIES
 // add new category
 router.post('/category', addNewCategory);
+router.get('/categories/:id', getAllCategories);
 
 
 // ITEMS AKA PRODUCTS

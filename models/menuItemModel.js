@@ -18,9 +18,14 @@ const sendMenuItemToDB = async (newItem) => {
 };
 
 const editItemDB = async (id, menuItem) => {
-  const matchedItem = await MenuItems.findByIdAndUpdate(id, menuItem);
-  const returnItem = await MenuItems.findById(id);
-  console.log('returnItem', returnItem);
+  try {
+    const matchedItem = await MenuItems.findByIdAndUpdate(id, menuItem);
+    const returnItem = await MenuItems.findById(id);
+    return returnItem;
+  } catch (error) {
+    console.log('Model: menu item NOT edited in the DB');
+    console.error(error); 
+  }
 
 }
 
