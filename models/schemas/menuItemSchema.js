@@ -1,5 +1,17 @@
 const { Schema } = require('../index');
 
+const allergenSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  checked: {
+    type: Boolean,
+    required: true
+  }
+
+})
+
 const menuItemSchema = new Schema({
 
   itemName: {
@@ -21,7 +33,7 @@ const menuItemSchema = new Schema({
     required: true
   },
   allergyContent: {
-    type: [String]
+    type: {allergenSchema}
   },
   dietaryContent: {
     type: [String]
