@@ -14,8 +14,10 @@ app.use(cors({
 }))
 
 
-app.use(express.json())
-app.use(router)
+app.use(express.json({limit: '50mb'}));
+//for data from forms
+// app.use(express.urlencoded({limit: '50mb', extended: true}));
+app.use(router);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost/${port} 🔥`);

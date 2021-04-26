@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { newUser, userLogin } = require('./controllers/userController')
-const { addNewCategory, getAllCategories } = require('./controllers/categoryController')
-const { addNewMenuItem, editMenuItem, getAllMenuItems } = require('./controllers/menuItemController')
-const { userValidate, validateLogin } = require('./validation/validationControl')
+const { newUser, userLogin } = require('./controllers/userController');
+const { addNewCategory, getAllCategories } = require('./controllers/categoryController');
+const { addNewMenuItem, editMenuItem, getAllMenuItems } = require('./controllers/menuItemController');
+const { userValidate, validateLogin } = require('./validation/validationControl');
+const { cloudinary } = require('./utils/cloudinary.utils');
 
 //USERS
 // update one user - change details in DB
@@ -33,7 +34,37 @@ router.put('/item/:id', editMenuItem);
 // get all menu items
 router.get('/items/:id', getAllMenuItems);
 
+//IMAGES 
+//image upload
+router.post('/image/upload', async (req,res) => {
+  try {
+    // had to send IMAGE data in an object
+    const image = req.body.data;
+    const uploadedResponse = await cloudinary.uploader.upload(image, {upload_preset: 'dimome_test'}); 
+    console.log('uploadedResponse', uploadedResponse);
+    res.json({message: 'it worked!'}).status(201)
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({message: 'image didnt send!'});
+  }
+})
 
-
+//image download
+router.get('/image', async (req, res) => {
+  try {
+    //TODO research docs to get more options as needed. This is for multiple images
+    const { resources } = await cloudinary.search.expression(
+      'folder:dimome_test')
+    // .sort_by('public_id', 'desc')
+    .execute();
+    // gets an array of matching results
+    const publicIds = resources.map( file => file.public_id);
+    console.log('publicIds from cloud', publicIds);
+    res.send(publicIds);
+    
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 module.exports = router;

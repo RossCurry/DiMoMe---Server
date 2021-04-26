@@ -52,3 +52,25 @@
   }
   
 }
+
+// image return from cloudinary
+"uploadedResponse {
+  asset_id: 'c5b4780f091c6a5b35969e35563054c8',
+  public_id: 'test-images/kxc3ibmcfomisr4jcg31',
+  version: 1619445684,
+  version_id: 'a74fa28cb51c101fc2277b699d901a75',
+  signature: '2e297b26f312dbaff0e1d9c334bbfeaeb8d53cf6',
+  width: 245,
+  height: 205,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2021-04-26T14:01:24Z',
+  tags: [],
+  bytes: 7193,
+  type: 'upload',
+  etag: '6deefde5a6e274d8f9d17435d2b6cd2e',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dimome/image/upload/v1619445684/test-images/kxc3ibmcfomisr4jcg31.jpg',
+  secure_url: 'https://res.cloudinary.com/dimome/image/upload/v1619445684/test-images/kxc3ibmcfomisr4jcg31.jpg',
+  access_mode: 'public'
+}"
