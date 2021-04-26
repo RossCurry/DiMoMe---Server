@@ -29,4 +29,16 @@ const editItemDB = async (id, menuItem) => {
 
 }
 
-module.exports = { sendMenuItemToDB, editItemDB }
+const fetchAllMenuItemsDB = async (userId) => {
+
+  try {
+    const allUserMenuItems = await MenuItems.find({userId});
+    return allUserMenuItems;
+  } catch (error) {
+    console.log('Model: All Menu Items NOT returned from the DB');
+    console.error(error);
+  }
+};
+
+
+module.exports = { sendMenuItemToDB, editItemDB, fetchAllMenuItemsDB }

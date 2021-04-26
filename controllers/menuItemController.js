@@ -1,5 +1,5 @@
 
-const { sendMenuItemToDB, editItemDB } = require('../models/menuItemModel');
+const { sendMenuItemToDB, editItemDB, fetchAllMenuItemsDB } = require('../models/menuItemModel');
 
 const addNewMenuItem = async (req, res) => {
   try {
@@ -27,5 +27,18 @@ const editMenuItem = async (req, res) => {
   }
 };
 
+const getAllMenuItems = async (req, res) => {
 
-module.exports = { addNewMenuItem, editMenuItem };
+  try {
+    const userId = req.params.id;
+    const allMenuItems = await fetchAllMenuItemsDB(userId);
+    res.send(allMenuItems).status(200);
+  } catch (error) {
+    res.status(500);
+    res.send({ error, message: 'Controller: could load all MenuItems' });
+    console.error(error); // eslint-disable-line
+  }
+};
+
+
+module.exports = { addNewMenuItem, editMenuItem, getAllMenuItems };

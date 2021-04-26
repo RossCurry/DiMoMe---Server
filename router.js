@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { newUser, userLogin } = require('./controllers/userController')
 const { addNewCategory, getAllCategories } = require('./controllers/categoryController')
-const { addNewMenuItem, editMenuItem } = require('./controllers/menuItemController')
+const { addNewMenuItem, editMenuItem, getAllMenuItems } = require('./controllers/menuItemController')
 const { userValidate, validateLogin } = require('./validation/validationControl')
 
 //USERS
@@ -21,6 +21,7 @@ router.post('/user/login', validateLogin, userLogin);
 // CATEGORIES
 // add new category
 router.post('/category', addNewCategory);
+// get all categories
 router.get('/categories/:id', getAllCategories);
 
 
@@ -29,6 +30,9 @@ router.get('/categories/:id', getAllCategories);
 router.post('/item', addNewMenuItem);
 // edit product
 router.put('/item/:id', editMenuItem);
+// get all menu items
+router.get('/items/:id', getAllMenuItems);
+
 
 
 
