@@ -29,6 +29,10 @@ const menuItemSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     require: true
+  },
+  public_id: {
+    type: String,
+    require: true
   }
 
 });

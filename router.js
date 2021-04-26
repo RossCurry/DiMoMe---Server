@@ -36,19 +36,21 @@ router.get('/items/:id', getAllMenuItems);
 
 //IMAGES 
 //image upload
-router.post('/image/upload', async (req,res) => {
+router.post('/image/upload', async (req, res) => {
   try {
     // had to send IMAGE data in an object
     const image = req.body.data;
+    const itemId = req.body.itemId;
     const uploadedResponse = await cloudinary.uploader.upload(image, {upload_preset: 'dimome_test'}); 
     console.log('uploadedResponse', uploadedResponse);
-    res.json({message: 'it worked!'}).status(201)
+    res.send(uploadedResponse).status(201);
   } catch (error) {
     console.error(error);
     res.status(500).json({message: 'image didnt send!'});
   }
 })
 
+//TODO create my own GET endpoint for the front end
 //image download
 router.get('/image', async (req, res) => {
   try {

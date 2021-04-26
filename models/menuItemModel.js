@@ -21,6 +21,7 @@ const editItemDB = async (id, menuItem) => {
   try {
     const matchedItem = await MenuItems.findByIdAndUpdate(id, menuItem);
     const returnItem = await MenuItems.findById(id);
+    console.log('returnItem', returnItem);
     return returnItem;
   } catch (error) {
     console.log('Model: menu item NOT edited in the DB');
