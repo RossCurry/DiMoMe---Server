@@ -45,6 +45,10 @@ const menuItemSchema = new Schema({
   public_id: {
     type: String,
     require: true
+  },
+  imageUrl: {
+    type: String,
+    require: true
   }
 
 });
