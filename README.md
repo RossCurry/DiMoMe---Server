@@ -1,6 +1,10 @@
 # **DiMoMe**
 
+<<<<<<< HEAD
 ![dimome - logo - orange](https://i.imgur.com/oGfJKGS.png)
+=======
+![dimome - logo - orange](/Users/rosscurry/Documents/CODING & LEARNING/CODEWORKS/SENIOR PROGRAM/CAREER WEEK/PNG/dimome - logo - orange.png)
+>>>>>>> afc9461ac402a1064c84ba556a6c1a42d175da62
 
 DiMoMe (digital mobile menu)  is a web app designed for any restaurant, bar or coffeeshop owners. The app aims to be a platform that provides easy access for customers to view digital menus in a comfortable to use format, readable on mobile devices, even allowing customers to filter products for allergens.
 
