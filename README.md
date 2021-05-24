@@ -9,12 +9,7 @@ Since 2016 the EU has made it a requirement for any eatery to provide informatio
 
 Furthermore the use of DiMoMe will lead to savings in menu print costs. It's a win for customers and restauranteurs alike.
 
-<<<<<<< HEAD
-![<img src="https://i.imgur.com/dYHNyQP.jpg" alt="someone using dimome to create their menu">](https://www.youtube.com/embed/rHxNc73Cbkw)
-=======
-<img src="https://i.imgur.com/dYHNyQP.jpg" alt="someone using dimome to create their menu">
->>>>>>> 30f216e491943ad9b3c1c97953ebd65d563872cd
-
+[![using dimome](https://i.imgur.com/dYHNyQP.jpg)](https://www.youtube.com/embed/rHxNc73Cbkw)
 ##  **Server**
 
 Welcome to the server repo for DiMoMe. If you are looking for the **client setup**, you can find it [here](https://github.com/RossCurry/DiMoMe---client).
