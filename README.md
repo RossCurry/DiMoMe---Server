@@ -9,6 +9,8 @@ Since 2016 the EU has made it a requirement for any eatery to provide informatio
 
 Furthermore the use of DiMoMe will lead to savings in menu print costs. It's a win for customers and restauranteurs alike.
 
+![<img src="https://i.imgur.com/dYHNyQP.jpg" alt="someone using dimome to create their menu">](https://www.youtube.com/embed/rHxNc73Cbkw)
+
 ##  **Server**
 
 Welcome to the server repo for DiMoMe. If you are looking for the **client setup**, you can find it [here](https://github.com/RossCurry/DiMoMe---client).
@@ -35,7 +37,9 @@ There is an env.examples file to help point you in the right direcction of any m
 
 ### **Installation - steps to install**
 
-To get things running, first clone this repo: https://github.com/RossCurry/DiMoMe---Server
+To get things running, first clone this repo: 
+
+`https://github.com/RossCurry/DiMoMe---Server`
 
 Then from the server folder install all dependencies:
 
@@ -45,15 +49,17 @@ To get the server running
 
 `npm start`
 
-For development I highly recommend installing [Nodemon](https://www.npmjs.com/package/nodemon) globally and using the `nodemon` command.
+For development I highly recommend installing [Nodemon](https://www.npmjs.com/package/nodemon) and using the `nodemon` command.
 
 As long as you have your MongoDB setup that should get everything up and running.
 
-Once the server is going you can start your client. Check out the repo here: https://github.com/RossCurry/DiMoMe---client.
+Once the server is going you can start your client. Check out the repo here: 
+
+`https://github.com/RossCurry/DiMoMe---client.`
 
 **Author - name and links to linkedin**
 
 Created by your truly, Ross Curry. 
 If you want to get in touch, try me on: 
 
-**LinkedIn**: [Ross Curry](https://www.linkedin.com/in/ross-curry-7a79a741/) 
+[**LinkedIn**](https://www.linkedin.com/in/ross-curry-7a79a741/) 
