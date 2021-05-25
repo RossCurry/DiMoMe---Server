@@ -4,11 +4,12 @@ require('dotenv').config();
 const session = require('express-session');
 
 
-const port = process.env.SV_PORT;
+const port = process.env.PORT;
 const router = require('./router');
 const cors = require('cors');
 
 app.use(cors({
+  // todo change to .env when netfli
   origin: 'http://localhost:3000',
   credentials: true,
 }))
