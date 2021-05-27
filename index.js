@@ -9,7 +9,8 @@ const cors = require('cors');
 
 app.use(cors({
   // todo change to .env when netfli
-  origin: 'http://localhost:3000',
+  // origin: 'https://dimome-v1.herokuapp.com',
+  origin: '*',
   credentials: true,
 }))
 
