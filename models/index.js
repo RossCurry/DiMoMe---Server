@@ -10,7 +10,7 @@ mongoose.connect(mongoURL+'/'+dbName, {
   useFindAndModify: false
 }, 
 (err) => {
-  if (err) return console.log(err);
+  if (err) return console.error(err);
   console.log('Mongoose connected! 🦫');
 });
 
