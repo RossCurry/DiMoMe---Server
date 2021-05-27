@@ -1,6 +1,5 @@
 const { addUser, checkLogin } = require('../models/userModel')
 
-
 async function newUser(req, res) {
   try {
     const user = req.body;

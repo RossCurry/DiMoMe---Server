@@ -18,7 +18,6 @@ const menuItemSchema = new Schema({
     type: String,
     required: true
   },
-  //TODO in client side, assign a category to each menu item
   categoryId: { 
     type: Schema.Types.ObjectId,
     required: true

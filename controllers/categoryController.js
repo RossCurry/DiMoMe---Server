@@ -1,8 +1,6 @@
 const { addCategoryToDB, fetchAllCategoriesDB } = require('../models/categoryModel');
 
-
 const addNewCategory = async (req, res) => {
-
   try {
     const newCategory = req.body;
     const addedCategory = await addCategoryToDB(newCategory);
@@ -12,11 +10,9 @@ const addNewCategory = async (req, res) => {
     res.send({ error, message: 'Controller: could not add New Category' });
     console.error(error); // eslint-disable-line
   }
-
 };
 
 const getAllCategories = async (req, res) => {
-
   try {
     const userId = req.params.id;
     const allCategories = await fetchAllCategoriesDB(userId);
@@ -27,6 +23,5 @@ const getAllCategories = async (req, res) => {
     console.error(error); // eslint-disable-line
   }
 };
-
 
 module.exports = { addNewCategory, getAllCategories }

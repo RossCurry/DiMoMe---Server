@@ -14,7 +14,6 @@ const addNewMenuItem = async (req, res) => {
 };
 
 const editMenuItem = async (req, res) => {
-
   try {
     const id = req.params.id;
     const itemToEdit = req.body;
@@ -28,7 +27,6 @@ const editMenuItem = async (req, res) => {
 };
 
 const getAllMenuItems = async (req, res) => {
-
   try {
     const userId = req.params.id;
     const allMenuItems = await fetchAllMenuItemsDB(userId);

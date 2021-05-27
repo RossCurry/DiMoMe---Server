@@ -20,7 +20,6 @@ router.post('/item', addNewMenuItem);
 router.put('/item/:id', editMenuItem);
 router.get('/items/:id', getAllMenuItems);
 
-
 //IMAGES 
 // TODO Add controllers for these endpoints
 //image upload

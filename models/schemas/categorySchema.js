@@ -1,9 +1,7 @@
 const { Schema } = require('../index');
 const { menuItemSchema } = require('./menuItemSchema');
 
-
 const categorySchema = new Schema({
-
 
     categoryName: {
       type: String,
@@ -19,10 +17,6 @@ const categorySchema = new Schema({
     //   required: true, 
     //   default: {} 
     // }
-
-
 });
-
-
 
 module.exports = { categorySchema };
