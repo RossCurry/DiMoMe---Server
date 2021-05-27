@@ -9,8 +9,8 @@ const cors = require('cors');
 
 app.use(cors({
   // todo change to .env when netfli
-  // origin: 'https://dimome-v1.herokuapp.com',
-  origin: '*',
+  origin: 'https://dimome-v1.herokuapp.com',
+  // origin: '*',
   credentials: true,
 }))
 
